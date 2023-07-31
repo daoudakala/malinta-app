@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:malinta/composants/appbar.dart';
 import 'package:malinta/screens/voyage_screen.dart';
 
 class ContactCorrespondant extends StatefulWidget {
@@ -14,15 +15,7 @@ class _ContactCorrespondantState extends State<ContactCorrespondant> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple,
-        title: const Text("Malinta"),
-        leading: IconButton(
-            onPressed: () => {Navigator.pop(context)},
-            icon: const Icon(Icons.menu)),
-        actions: [IconButton(onPressed: () => {}, icon: Icon(Icons.message))],
-        elevation: 0,
-      ),
+      appBar: buildAppBar(),
       body: Padding(
         padding: EdgeInsets.all(12.0),
         child: Column(
@@ -36,7 +29,10 @@ class _ContactCorrespondantState extends State<ContactCorrespondant> {
               decoration: const InputDecoration(
                 label: Text("Contact correspondant"),
                 hintText: "(+225) 0101 0101 0101",
-                prefixIcon: Icon(Icons.phone),
+                prefixIcon: Icon(
+                  Icons.phone,
+                  color: Colors.green,
+                ),
                 border: OutlineInputBorder(
                     borderSide: BorderSide(width: 1, color: Colors.black)),
               ),

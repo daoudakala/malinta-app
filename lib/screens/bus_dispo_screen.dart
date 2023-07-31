@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:malinta/screens/detail_voyage_screen.dart';
 import 'package:malinta/screens/voyage_screen.dart';
+import 'package:malinta/composants/appbar.dart';
 
 class BusDisponible extends StatefulWidget {
   const BusDisponible({super.key});
@@ -15,13 +16,7 @@ class _BusDisponibleState extends State<BusDisponible> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple,
-        title: const Text("Malinta"),
-        leading: IconButton(onPressed: () => {}, icon: const Icon(Icons.menu)),
-        actions: [IconButton(onPressed: () => {}, icon: Icon(Icons.message))],
-        elevation: 0,
-      ),
+      appBar: buildAppBar(),
       body: Padding(
         padding: EdgeInsets.all(12.0),
         child: Column(
